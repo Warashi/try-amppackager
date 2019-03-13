@@ -1,7 +1,7 @@
 LocalOnly = false
 CertFile = './fullchain.cert'
 KeyFile = './server.privkey'
-OCSPCache = '/tmp/amppkg-ocsp'
+OCSPCache = '/work/amppkg-ocsp'
 
 [[URLSet]]
   [URLSet.Sign]
