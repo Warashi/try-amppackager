@@ -1,0 +1,8 @@
+LocalOnly = false
+CertFile = './fullchain.cert'
+KeyFile = './server.privkey'
+OCSPCache = '/tmp/amppkg-ocsp'
+
+[[URLSet]]
+  [URLSet.Sign]
+    Domain = "origin.local"

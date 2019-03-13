@@ -1,0 +1,23 @@
+version: '3.7'
+services:
+  origin.local:
+    build:
+      context: ./
+      dockerfile: Dockerfile-origin
+
+  amppkg.local:
+    build:
+      context: ./
+      dockerfile: Dockerfile-amppkg
+    depends_on:
+      - origin.local
+
+  reverse.local:
+    build:
+      context: ./
+      dockerfile: Dockerfile-reverse
+    ports:
+      - "8080:443"
+    depends_on:
+      - amppkg.local
+      - origin.local

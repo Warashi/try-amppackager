@@ -1,0 +1,15 @@
+FROM golang:1.12.0-stretch as builder
+WORKDIR /work
+ENV GO111MODULE=on GOBIN=/work/bin
+COPY ./amppkg/go.mod ./amppkg/go.sum ./
+RUN go install github.com/ampproject/amppackager/cmd/amppkg
+
+FROM debian:stretch
+WORKDIR /work
+EXPOSE 8080
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY ./cert/ca.cert /etc/ssl/certs/
+RUN echo ca.cert >> /etc/ca-certificats.conf && update-ca-certificates
+COPY ./amppkg/amppkg.toml ./cert/fullchain.cert ./cert/server.privkey ./
+COPY --from=builder /work/bin/amppkg /usr/local/bin/amppkg
+ENTRYPOINT [ "amppkg" ]

@@ -1,0 +1,9 @@
+FROM nginx:stable
+WORKDIR /work
+EXPOSE 443
+RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY ./cert/server.cert ./cert/server.privkey ./
+COPY ./cert/ca.cert /etc/ssl/certs/
+RUN echo ca.cert >> /etc/ca-certificats.conf && update-ca-certificates
+COPY ./reverse/proxy.conf /etc/nginx/
+
