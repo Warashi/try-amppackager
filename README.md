@@ -8,10 +8,13 @@
 
 Google Chrome Canary 起動コマンド
 ```
-open -a "Google Chrome Canary" --args --ignore-certificate-errors-spki-list=CTKYAj/y1IV6vPiiDpYAx0BF6AAS1lCeQSlZdcqcmHc=
+open -a "Google Chrome Canary" --args --ignore-certificate-errors-spki-list=$(cat cert/fingerprints.txt)
+google-chrome-unsgtable --args --ignore-certificate-errors-spki-list=$(cat cert/fingerprints.txt)
 ```
 
-https://localhost/priv/doc/https://origin.local/index.html
+起動したら、DevToolsでNetworkを見ながら下記URLにアクセスする。
 
-これを入れて `AMP-Cache-Transform: google` を送ること。
-https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj
+https://origin.local/index.html
+
+[ModHeader](https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj)を入れて `AMP-Cache-Transform: google` を送った場合と送らなかった場合でDevToolsのNetworkに出る情報を見る。送った場合にはsigned-exchangeが返ってきて、送らなかった場合には普通にhtmlが返ってくる。
+
