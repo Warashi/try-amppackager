@@ -1,5 +1,7 @@
 # try-amppackager
 
+`docker-compose up` で起動する。
+
 `/etc/hosts` に下記を加えてGoogle Chrome Canaryで動作確認する
 
 ```
@@ -9,7 +11,7 @@
 Google Chrome Canary 起動コマンド
 ```
 open -a "Google Chrome Canary" --args --ignore-certificate-errors-spki-list=$(cat cert/fingerprints.txt)
-google-chrome-unsgtable --args --ignore-certificate-errors-spki-list=$(cat cert/fingerprints.txt)
+google-chrome-unstable --args --ignore-certificate-errors-spki-list=$(cat cert/fingerprints.txt)
 ```
 
 起動したら、DevToolsでNetworkを見ながら下記URLにアクセスする。

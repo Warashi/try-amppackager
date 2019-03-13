@@ -16,4 +16,4 @@ openssl ocsp -index ./index.txt -rsigner ca.ocsp.cert -rkey ca.privkey -CA ca.ce
 
 cat server.cert | openssl x509 -pubkey | openssl pkey -pubin -outform der | openssl dgst -sha256 -binary | base64 | tee fingerprints.txt
 echo "open -a 'Google Chrome Canary' --args --ignore-certificate-errors-spki-list=$(cat fingerprints.txt)"
-echo "google-chrome-unsgtable --args --ignore-certificate-errors-spki-list=$(cat fingerprints.txt)"
+echo "google-chrome-unstable --args --ignore-certificate-errors-spki-list=$(cat fingerprints.txt)"
