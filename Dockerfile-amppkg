@@ -7,10 +7,13 @@ RUN go install github.com/ampproject/amppackager/cmd/amppkg
 FROM debian:stretch
 WORKDIR /work
 EXPOSE 8080
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
-COPY ./cert/ca.cert /etc/ssl/certs/
+RUN apt-get update && apt-get install -y openssl ca-certificates && rm -rf /var/lib/apt/lists/*
+COPY ./certs/ca.cert /etc/ssl/certs/
 RUN echo ca.cert >> /etc/ca-certificats.conf && update-ca-certificates
-COPY ./amppkg/amppkg.toml ./cert/ ./
+COPY ./amppkg/amppkg.toml ./certs/ ./
 RUN touch index.txt index.txt.attr && openssl ocsp -index ./index.txt -rsigner ca.ocsp.cert -rkey ca.privkey -CA ca.cert -ndays 7 -issuer ca.cert -cert server.cert -respout /tmp/amppkg-ocsp
 COPY --from=builder /work/bin/amppkg /usr/local/bin/amppkg
-ENTRYPOINT [ "amppkg" ]
+ENTRYPOINT touch index.txt index.txt.attr \
+                && openssl ocsp -noverify -index ./index.txt -rsigner ca.ocsp.cert -rkey ca.privkey -CA ca.cert -ndays 7 -issuer ca.cert -cert server.cert -respout /tmp/amppkg-ocsp \
+                && amppkg
+

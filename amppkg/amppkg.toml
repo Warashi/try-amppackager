@@ -5,4 +5,4 @@ OCSPCache = '/tmp/amppkg-ocsp'
 
 [[URLSet]]
   [URLSet.Sign]
-    Domain = "origin.local"
+    Domain = "try-amppackager.local"

@@ -9,8 +9,6 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile-amppkg
-    depends_on:
-      - origin.local
 
   reverse.local:
     build:
@@ -18,6 +16,7 @@ services:
       dockerfile: Dockerfile-reverse
     ports:
       - "443:443"
-    depends_on:
-      - amppkg.local
-      - origin.local
+    networks:
+      default:
+        aliases:
+          - try-amppackager.local
