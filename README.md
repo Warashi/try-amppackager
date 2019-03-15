@@ -8,7 +8,7 @@
 127.0.0.1 try-amppackager.local
 ```
 
-Google Chrome Canary 起動コマンド
+Google Chrome 起動コマンド (macOS用)
 ```
 ./scripts/open-chrome.sh
 ```
