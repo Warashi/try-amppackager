@@ -2,7 +2,7 @@
 
 `docker-compose up` で起動する。
 
-`/etc/hosts` に下記を加えてGoogle Chrome Canaryで動作確認する
+`/etc/hosts` に下記を加えてGoogle Chrome 73以降で `chrome://flags` からSigned HTTP Exchangeを有効にして動作確認する
 
 ```
 127.0.0.1 try-amppackager.local
