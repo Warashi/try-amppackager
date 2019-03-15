@@ -8,9 +8,10 @@
 127.0.0.1 try-amppackager.local
 ```
 
-Google Chrome 起動コマンド (macOS用)
+Google Chrome 起動コマンド (macOS, Linux)
 ```
-./scripts/open-chrome.sh
+./scripts/open-chrome-mac.sh
+./scripts/open-chrome-linux.sh
 ```
 
 起動したら、DevToolsでNetworkを見ながら下記URLにアクセスする。
