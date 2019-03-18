@@ -1,8 +1,8 @@
 FROM golang:1.12.0-stretch as builder
 WORKDIR /work
 ENV GO111MODULE=on GOBIN=/work/bin
-COPY ./amppkg/go.mod ./amppkg/go.sum ./
-RUN go install github.com/ampproject/amppackager/cmd/amppkg
+COPY ./amppkg/ ./
+RUN go install -mod=vendor github.com/ampproject/amppackager/cmd/amppkg
 
 FROM debian:stretch
 WORKDIR /work

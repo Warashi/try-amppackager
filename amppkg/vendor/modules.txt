@@ -1,0 +1,52 @@
+# github.com/WICG/webpackage v0.0.0-20190306224613-6067529edfbc
+github.com/WICG/webpackage/go/signedexchange
+github.com/WICG/webpackage/go/signedexchange/cbor
+github.com/WICG/webpackage/go/signedexchange/certurl
+github.com/WICG/webpackage/go/signedexchange/internal/bigendian
+github.com/WICG/webpackage/go/signedexchange/internal/signingalgorithm
+github.com/WICG/webpackage/go/signedexchange/mice
+github.com/WICG/webpackage/go/signedexchange/structuredheader
+github.com/WICG/webpackage/go/signedexchange/version
+# github.com/ampproject/amphtml v0.0.0-20190312222951-4a9ec7291763
+github.com/ampproject/amphtml/validator
+# github.com/ampproject/amppackager v0.0.0-20190313001849-5dd1ea6f494a
+github.com/ampproject/amppackager/cmd/amppkg
+github.com/ampproject/amppackager/packager/certcache
+github.com/ampproject/amppackager/packager/rtv
+github.com/ampproject/amppackager/packager/signer
+github.com/ampproject/amppackager/packager/util
+github.com/ampproject/amppackager/packager/validitymap
+github.com/ampproject/amppackager/packager/accept
+github.com/ampproject/amppackager/packager/amp_cache_transform
+github.com/ampproject/amppackager/transformer
+github.com/ampproject/amppackager/transformer/request
+github.com/ampproject/amppackager/transformer/internal/amphtml
+github.com/ampproject/amppackager/transformer/internal/htmlnode
+github.com/ampproject/amppackager/transformer/printer
+github.com/ampproject/amppackager/transformer/transformers
+github.com/ampproject/amppackager/transformer/internal/css
+github.com/ampproject/amppackager/transformer/layout
+# github.com/golang/protobuf v1.3.0
+github.com/golang/protobuf/proto
+# github.com/julienschmidt/httprouter v1.2.0
+github.com/julienschmidt/httprouter
+# github.com/pelletier/go-toml v1.2.0
+github.com/pelletier/go-toml
+# github.com/pkg/errors v0.8.1
+github.com/pkg/errors
+# github.com/pquerna/cachecontrol v0.0.0-20180517163645-1555304b9b35
+github.com/pquerna/cachecontrol
+github.com/pquerna/cachecontrol/cacheobject
+# github.com/theckman/go-flock v0.7.1
+github.com/theckman/go-flock
+# golang.org/x/crypto v0.0.0-20190313024323-a1f597ede03a
+golang.org/x/crypto/ocsp
+# golang.org/x/net v0.0.0-20190313082753-5c2c250b6a70
+golang.org/x/net/html
+golang.org/x/net/html/atom
+golang.org/x/net/idna
+# golang.org/x/text v0.3.0
+golang.org/x/text/secure/bidirule
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/transform
